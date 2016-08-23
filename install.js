@@ -1,6 +1,7 @@
 var task = module.exports,
 	path = require('path'),
 	Q = null,
+	fs = null,
 	shelljs = null,
 	cloudbridge = null,
 	projectDir = null;
@@ -9,6 +10,7 @@ task.run = function run(cli, targetPath) {
 	cloudbridge = cli;
 	projectDir = targetPath;
 	Q = cloudbridge.require('q');
+	fs = cloudbridge.require('fs');
 	shelljs = cloudbridge.require('shelljs');
 
 	return Q()

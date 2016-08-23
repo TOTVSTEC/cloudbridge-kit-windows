@@ -8,4 +8,4 @@ task.run = function run(cli, projectData) {
 	var target = path.join(cli.projectDir, 'build', 'windows');
 
 	shelljs.rm('-rf', target);
-}
+};

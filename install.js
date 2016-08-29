@@ -22,6 +22,7 @@ function copyDependencies() {
 	var src = path.join(__dirname, 'build', '*'),
 		target = path.join(projectDir, 'build');
 
+	shelljs.mkdir('-p', target);
 	shelljs.cp('-Rf', src, target);
 };
 

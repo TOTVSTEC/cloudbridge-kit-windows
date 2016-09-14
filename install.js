@@ -34,10 +34,9 @@ function applyTemplate() {
 	content = content.replace(/LASTMAINPROG.+/igm, 'LASTMAINPROG=' + project.name + '.Cloud');
 	fs.writeFileSync(ini, content);
 
-	ini = path.join(projectDir, 'build', 'windows', 'bin', 'appserver', 'appserver.ini'),
-	content = fs.readFileSync(ini, {encoding: 'utf8'});
-	content = content.replace(/NAME=APPSERVER-SERVICENAME/igm, 'NAME=CLOUDBRIDGE-' + project.name.toUpperCase());
-	content = content.replace(/DISPLAYNAME=APPSERVER-DISPLAYNAME/igm, 'DISPLAYNAME=CloudBridge ' + project.name);
-
-	fs.writeFileSync(ini, content);
+	//ini = path.join(projectDir, 'build', 'windows', 'bin', 'appserver', 'appserver.ini'),
+	//content = fs.readFileSync(ini, {encoding: 'utf8'});
+	//content = content.replace(/NAME=APPSERVER-SERVICENAME/igm, 'NAME=CLOUDBRIDGE-' + project.name.toUpperCase());
+	//content = content.replace(/DISPLAYNAME=APPSERVER-DISPLAYNAME/igm, 'DISPLAYNAME=CloudBridge ' + project.name);
+	//fs.writeFileSync(ini, content);
 }

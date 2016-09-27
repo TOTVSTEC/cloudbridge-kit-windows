@@ -1,0 +1,23 @@
+{
+  "name": "cloudbridge-kit-windows",
+  "version": "0.0.1",
+  "description": "A tool for creating and developing CloudBridge mobile apps.",
+  "homepage": "http://www.totvs.com/",
+  "keywords": [
+    "cloudbridge",
+    "mobile",
+    "app",
+    "hybrid"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/totvstec/cloudbridge-kit-windows.git"
+  },
+  "contributors": [
+    {
+      "name": "Rogerio Ribeiro da Cruz",
+      "email": "rogerio.ribeiro@totvs.com.br"
+    }
+  ],
+  "license": "MIT"
+}

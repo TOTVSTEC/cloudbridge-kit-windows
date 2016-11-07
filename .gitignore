@@ -1,2 +1,1 @@
-build/windows/bin/appserver/*.log
-build/windows/bin/smartclient/*.log
+build/**/*.log

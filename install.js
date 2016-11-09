@@ -1,42 +1,7 @@
-var task = module.exports,
-	path = require('path'),
-	Q = null,
-	fs = null,
-	shelljs = null,
-	cloudbridge = null,
-	projectDir = null;
+var task = module.exports;
 
 task.run = function run(cli, targetPath) {
-	cloudbridge = cli;
-	projectDir = targetPath;
-	Q = cloudbridge.require('q');
-	fs = cloudbridge.require('fs');
-	shelljs = cloudbridge.require('shelljs');
+	var restore = require('./restore');
 
-	return Q()
-		.then(copyDependencies)
-		.then(applyTemplate);
+	return restore.run(cli, targetPath);
 };
-
-function copyDependencies() {
-	var src = path.join(__dirname, 'build', '*'),
-		target = path.join(projectDir, 'build');
-
-	shelljs.mkdir('-p', target);
-	shelljs.cp('-Rf', src, target);
-};
-
-function applyTemplate() {
-	var ini = path.join(projectDir, 'build', 'windows', 'bin', 'smartclient', 'smartclient.ini'),
-		project = require(path.join(projectDir, 'cloudbridge.json'));
-
-	var content = fs.readFileSync(ini, {encoding: 'utf8'});
-	content = content.replace(/LASTMAINPROG.+/igm, 'LASTMAINPROG=' + project.name + '.Cloud');
-	fs.writeFileSync(ini, content);
-
-	//ini = path.join(projectDir, 'build', 'windows', 'bin', 'appserver', 'appserver.ini'),
-	//content = fs.readFileSync(ini, {encoding: 'utf8'});
-	//content = content.replace(/NAME=APPSERVER-SERVICENAME/igm, 'NAME=CLOUDBRIDGE-' + project.name.toUpperCase());
-	//content = content.replace(/DISPLAYNAME=APPSERVER-DISPLAYNAME/igm, 'DISPLAYNAME=CloudBridge ' + project.name);
-	//fs.writeFileSync(ini, content);
-}

@@ -24,7 +24,7 @@ function copyDependencies() {
 
 	shelljs.mkdir('-p', target);
 	shelljs.cp('-Rf', src, target);
-};
+}
 
 function applyTemplate() {
 	var ini = path.join(projectDir, 'build', 'windows', 'bin', 'smartclient', 'smartclient.ini'),

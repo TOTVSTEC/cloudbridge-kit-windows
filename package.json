@@ -1,6 +1,6 @@
 {
   "name": "cloudbridge-kit-windows",
-  "version": "0.0.5-SNAPSHOT",
+  "version": "0.0.5",
   "description": "A tool for creating and developing CloudBridge mobile apps.",
   "homepage": "http://www.totvs.com/",
   "keywords": [

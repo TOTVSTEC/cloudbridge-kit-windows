@@ -6,7 +6,7 @@ var task = module.exports,
 	cloudbridge = null,
 	projectDir = null;
 
-task.run = function run(cli, targetPath) {
+task.run = function run(cli, targetPath, projectData) {
 	cloudbridge = cli;
 	projectDir = targetPath;
 	Q = cloudbridge.require('q');

@@ -27,6 +27,6 @@
     "release:major": "totvstec release major"
   },
   "devDependencies": {
-    "totvstec-tools": "^1.0.5"
+    "totvstec-tools": "^1.0.6"
   }
 }
